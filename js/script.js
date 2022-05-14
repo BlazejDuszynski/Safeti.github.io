@@ -12,3 +12,26 @@ const observer = new IntersectionObserver(entries => {
 offerFadeInItems.forEach(offerFadeInItem => {
     observer.observe(offerFadeInItem);
 });
+
+const contactWindow = document.querySelector(".contactWindow");
+const main = document.querySelector(".main");
+const closeButton = document.querySelector(".contactWindow__closeButton");
+
+const contactWindowAppear = () => {
+    contactWindow.style.display = "block";
+    main.style.display = "none";
+}
+
+window.addEventListener("load", () => {
+    setTimeout(
+        function open(){
+            contactWindow.style.display = "block";
+        },
+        10000  
+    )
+});
+
+closeButton.onclick = function() {
+    contactWindow.style.display = "none";
+    main.style.display = "inherit";
+}
